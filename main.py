@@ -12,7 +12,9 @@ number_of_months = 0
 current_savings = 0
 
 while current_savings < partial_down_payment:
-	current_savings += (current_savings * 0.04/12) + monthly_savings
+	current_savings = current_savings + current_savings * (0.04/12) + (annual_salary/12) * portion_saved
 	number_of_months += 1
+	if number_of_months % 6 == 0:
+		annual_salary += annual_salary * semi_annual_raise
 
 print("Number of Months: ", number_of_months)
